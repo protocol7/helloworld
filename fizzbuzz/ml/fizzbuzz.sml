@@ -1,8 +1,8 @@
 fun fizzbuzz(range) =
     List.rev(List.foldl(fn (i, xs) => if i mod 15 = 0 then "FizzBuzz" :: xs
-                            else if i mod 3 = 0 then "Fizz" :: xs
-                            else if i mod 5 = 0 then "Buzz" :: xs
-                            else Int.toString(i) :: xs) [] range);
+                                      else if i mod 3 = 0 then "Fizz" :: xs
+                                      else if i mod 5 = 0 then "Buzz" :: xs
+                                      else Int.toString(i) :: xs) [] range);
 
 fizzbuzz(List.tabulate(100, fn x => x+1));
 
