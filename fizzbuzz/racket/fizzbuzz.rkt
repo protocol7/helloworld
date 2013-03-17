@@ -5,14 +5,16 @@
     #t
     (begin
       (fizzbuzz (- n 1))
-      (cond
-        [(= 0 (modulo n 15)) (printf "FizzBuzz\n")]
-        [(= 0 (modulo n 3)) (printf "Fizz\n")]
-        [(= 0 (modulo n 5)) (printf "Buzz\n")]
-        [else (printf "~a\n" n)]
+      (printf "~a\n"
+        (match (list (modulo n 3) (modulo n 5))
+          [(list 0 0) "FizzBuzz"]
+          [(list 0 _) "Fizz"]
+          [(list _ 0) "Buzz"]
+          [_ n]
         )
       )
     )
   )
+)
 
 (fizzbuzz 100)
